@@ -11,63 +11,86 @@
             padding: 0;
         }
         header {
-            background-color: #0074D9;
+            background-color: #0074D9; /* Blau */
             color: #fff;
+            padding: 20px;
             text-align: center;
-            padding: 20px 0;
         }
-        .profile-img {
+        #profile-img {
             border-radius: 50%;
             width: 150px;
             height: 150px;
-            margin: 20px auto;
-            display: block;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
+            margin: auto;
+            padding: 20px;
         }
-        .github-logo {
-            width: 30px;
-            vertical-align: middle;
+        .project {
+            margin-bottom: 20px;
         }
-        .hint-popup {
+        .popup {
             position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 10px 20px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .popup-content {
+            background-color: #fff;
+            padding: 20px;
             border-radius: 5px;
-            display: none;
+        }
+        #close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Nadja Brandt</h1>
-    </header>
-    <img class="profile-img" src="https://images-ext-1.discordapp.net/external/FIslTGmUFlFJ2AxKSGLdlmJ-bzjUfhMGxlI35O5YoLM/https/cdn.discordapp.com/avatars/1230276971355705485/c6ad279cdf2febacf5ca51a987372a51.png?format=webp&quality=lossless&width=211&height=211" alt="Profilbild">
-    <div class="container">
-        <h2>Über mich</h2>
+        <h1>Nadja Brandt - Portfolio</h1>
+        <img id="profile-img" src="https://images-ext-1.discordapp.net/external/FIslTGmUFlFJ2AxKSGLdlmJ-bzjUfhMGxlI35O5YoLM/https/cdn.discordapp.com/avatars/1230276971355705485/c6ad279cdf2febacf5ca51a987372a51.png?format=webp&quality=lossless&width=211&height=211" alt="Profilbild">
         <p>Alter: 19 Jahre</p>
+        <p>GitHub: <a href="https://github.com/nadjabrandt">github.com/nadjabrandt</a></p>
+    </header>
+    <div class="container">
         <h2>Projekte</h2>
-        <ul>
-            <li>Portfolio mit HTML</li>
-            <li>Discord Bot mit Python</li>
-            <li>JavaScript</li>
-        </ul>
-        <h2>Links</h2>
-        <p><a href="https://github.com/nadjabrandt"><img class="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo"> GitHub</a></p>
+        <div class="project">
+            <h3>Portfolio</h3>
+            <p>Dies ist mein persönliches Portfolio.</p>
+        </div>
+        <div class="project">
+            <h3>HTML</h3>
+            <p>Projekte, die ich mit HTML umgesetzt habe.</p>
+        </div>
+        <div class="project">
+            <h3>Discord Bot mit Python</h3>
+            <p>Ein Bot für Discord, den ich mit Python programmiert habe.</p>
+        </div>
     </div>
-    <div class="hint-popup" id="hint-popup">Diese Seite wird von der Handy Verwaltung gehostet.</div>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span id="close-btn">&times;</span>
+            <p>Diese Seite wird von der Handy Verwaltung gehostet.</p>
+        </div>
+    </div>
     <script>
         window.onload = function() {
-            setTimeout(function() {
-                document.getElementById('hint-popup').style.display = 'block';
-            }, 3000); // Zeige die Hinweismeldung nach 3 Sekunden
+            const popup = document.getElementById('popup');
+            const closeBtn = document.getElementById('close-btn');
+
+            closeBtn.onclick = function() {
+                popup.style.display = 'none';
+            };
         };
     </script>
 </body>
