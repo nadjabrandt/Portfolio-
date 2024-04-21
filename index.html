@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadja Brandt - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .profile-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            display: block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        .github-logo {
+            width: 30px;
+            vertical-align: middle;
+        }
+        .hint-popup {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Nadja Brandt</h1>
+    </header>
+    <img class="profile-img" src="https://images-ext-1.discordapp.net/external/FIslTGmUFlFJ2AxKSGLdlmJ-bzjUfhMGxlI35O5YoLM/https/cdn.discordapp.com/avatars/1230276971355705485/c6ad279cdf2febacf5ca51a987372a51.png?format=webp&quality=lossless&width=211&height=211" alt="Profilbild">
+    <div class="container">
+        <h2>Über mich</h2>
+        <p>Alter: 19 Jahre</p>
+        <h2>Projekte</h2>
+        <ul>
+            <li>Portfolio mit HTML</li>
+            <li>Discord Bot mit Python</li>
+            <li>JavaScript</li>
+        </ul>
+        <h2>Links</h2>
+        <p><a href="https://github.com/nadjabrandt"><img class="github-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Logo"> GitHub</a></p>
+    </div>
+    <div class="hint-popup" id="hint-popup">Diese Seite wird von der Handy Verwaltung gehostet.</div>
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('hint-popup').style.display = 'block';
+            }, 3000); // Zeige die Hinweismeldung nach 3 Sekunden
+        };
+    </script>
+</body>
+</html>
